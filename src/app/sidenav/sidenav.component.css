@@ -1,0 +1,6 @@
+.sidebar{
+  position: fixed; /* Fixed Position*/
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        width: 60px; /* Set the width of the sidebar */
+        background-color: rgb(70, 66, 66)
+      }

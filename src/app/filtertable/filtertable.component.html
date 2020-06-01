@@ -1,0 +1,49 @@
+<div style=" display: flex; width: 100%;flex-direction: row;">
+    <div style="width:70%;margin-right:8px;">
+        <table>
+            <tr>
+              <th *ngFor ="let haed of rowhead1">
+                  <div *ngIf="haed.sortable; else elseBlock">
+                      <button>{{haed.field | uppercase}}</button>
+                  </div>
+                  <ng-template #elseBlock>
+                    <div>{{haed.field | uppercase}}</div>
+                </ng-template>
+                </th>
+            </tr>
+            <tr *ngFor ="let data of rowvalues1">
+              <td>{{data.id}}</td>
+              <td>{{data.Name}}</td>
+              <td>{{data.city}}</td>
+              <td>{{data.make}}</td>
+              <td>{{data.model}}</td>
+              <td>{{data.Year}}</td>
+            </tr>
+          </table>
+    
+    </div>
+    <div style="width:30%; background-color:rgb(252, 218, 144); padding:20px;">
+        <form>
+            <h1>Make</h1>
+            <div style ="display: flex; width: 100%;flex-direction: row;" *ngFor = "let data of makedata">
+            <div style="width:70%">
+                <label for="{{data}}">{{data}}</label>
+            </div>
+            <div style="width:30%">
+            <input type="checkbox" id="{{data}}" name="{{data}}" value="{{data}}" (change)="onCheckboxChange($event)"><br>
+            </div>
+        </div>
+
+        <h1>Price</h1>
+            <div style ="display: flex; width: 100%;flex-direction: row;" *ngFor = "let year of Yeardata">
+            <div style="width:70%">
+                <label for="{{year}}">{{year}}</label>
+            </div>
+            <div style="width:30%">
+            <input type="checkbox" id="{{year}}" name="{{year}}" value="{{year}}" (change)="onCheckboxChange($event)"><br>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</div>

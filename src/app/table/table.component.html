@@ -1,0 +1,20 @@
+<table>
+        <tr>
+          <th *ngFor ="let haed of rowhead">
+              <div *ngIf="haed.sortable; else elseBlock">
+                  <button (click)="onClickMe(haed.field)">{{haed.field | uppercase}}</button>
+              </div>
+              <ng-template #elseBlock>
+                <div>{{haed.field | uppercase}}</div>
+            </ng-template>
+            </th>
+        </tr>
+        <tr *ngFor ="let data of rowvalues">
+          <td>{{data.id}}</td>
+          <td>{{data.Name}}</td>
+          <td>{{data.city}}</td>
+          <td>{{data.make}}</td>
+          <td>{{data.model}}</td>
+          <td>{{data.Year}}</td>
+        </tr>
+      </table>
