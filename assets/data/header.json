@@ -1,0 +1,8 @@
+[
+    {"field": "id", "sortable": false},
+    {"field": "Name", "sortable": false},
+    {"field": "city", "sortable": false},
+    {"field": "make", "sortable": true},
+    {"field": "model", "sortable": false},
+    {"field": "Year", "sortable": false}
+]
